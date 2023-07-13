@@ -15,7 +15,7 @@ RUN apt-get update && \
     chown kerbuser:kerbuser /reinit.sh && \
     chmod u+x /reinit.sh && \
     chown kerbuser:kerbuser /reinit-pwd.sh && \
-    chmod u+x /reinit-pwd.sh
+    chmod ugo+x /reinit-pwd.sh
 
 USER 431
 
