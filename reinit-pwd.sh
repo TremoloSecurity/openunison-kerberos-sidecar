@@ -4,6 +4,9 @@ echo "Kerberos sidecar container is started at $(date)."
 
 PASSWORD=`cat $SECRETS/password`
 
+if [ -z ${PRINCIPAL+x}]; then PRINCIPAL=`cat $SECRETS/principal`; fi
+
+
 while true; do
   echo "*** Trying to kinit at $(date). ***"
   echo $PASSWORD | kinit "$PRINCIPAL"

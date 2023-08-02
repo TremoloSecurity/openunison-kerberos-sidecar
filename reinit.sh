@@ -2,7 +2,7 @@
 
 echo "Kerberos sidecar container is started at $(date)."
 
-
+if [ -z ${PRINCIPAL+x}]; then PRINCIPAL=`cat $SECRETS/principal`; fi
 
 while true; do
   echo "*** Trying to kinit at $(date). ***"
